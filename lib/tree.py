@@ -3,4 +3,15 @@ class Tree:
     self.root = root
 
   def get_element_by_id(self, id):
-    pass
+    holder_list = []
+    nodes_to_visit = [self.root]
+
+    while len(nodes_to_visit) > 0:
+      node = nodes_to_visit.pop(0)
+      if node['id'] == id:
+        return node
+      else:      
+        nodes_to_visit = node['children'] + nodes_to_visit
+        print(f'{ holder_list}\n')
+
+    
